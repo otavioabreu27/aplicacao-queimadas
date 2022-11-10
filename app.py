@@ -7,7 +7,10 @@ app = Flask(__name__)
 def visualization():
     dataArray = data.getData("fire_risk.csv")
     data.buildGraph(dataArray)
-    return render_template("teste.html", graphPath = "./graph.png")
+    highestAndLowestRiskPoints = data.highestAndLowestRiskPoints(dataArray)
+    return render_template("visualization.html", 
+                           highestNumbersRegion = highestAndLowestRiskPoints[0],
+                           lowestNumbersRegion = highestAndLowestRiskPoints[1])
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8042, debug=True)

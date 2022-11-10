@@ -1,3 +1,4 @@
+# Data manipulation module
 import plotly.express as px
 
 def getData(fileName: str) -> list:
@@ -36,3 +37,24 @@ def buildGraph(dataArray: list):
                    sudesteFireRiskPoints, centroOesteFireRiskPoints])
 
     return graph.write_image("./static/images/fireRiskPointsGraph.png")
+
+def highestAndLowestRiskPoints(dataArray: list) -> list:
+    '''Get the dataArray and find the regions with the highest and the lowest numbers of
+    high risk points.'''
+    highRiskCountArray = [[0,"sul"], [0,"nordeste"], [0,"norte"], [0,"sudeste"], [0,"centroOeste"]]
+
+    for row in dataArray:
+        if row[1] == "alto":
+            if row[2] == "sul":
+                highRiskCountArray[0][0] += 1
+            elif row[2] == "nordeste":
+                highRiskCountArray[1][0] += 1
+            elif row[2] == "norte":
+                highRiskCountArray[2][0] += 1
+            elif row[2] == "sudeste":
+                highRiskCountArray[3][0] += 1
+            elif row[2] == "centro oeste":
+                highRiskCountArray[4][0] += 1
+    
+    highRiskCountArray.sort(reverse=True, key=lambda x:x[0])
+    return [highRiskCountArray[0][1], highRiskCountArray[-1][1]]

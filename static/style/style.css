@@ -1,0 +1,49 @@
+body, html {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+#fireRiskPointsGraph{
+    max-width: 60%;
+}
+
+#riskTable{
+    width: 60vw;
+    height: 15vh;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tdHighRisk{
+    font-size: 120%;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    width: 20%;
+}
+
+.tdLowRisk{
+    font-size: 120%;
+    font-weight: bold;    
+    background-color: darkgreen;
+    color: yellow;
+    width: 20%;
+}
+
+.tdOtherRisk{
+    font-size: 120%;
+    font-weight: bold;
+    background-color: lightgray;
+    color: black;
+    width: 20%;
+}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %} Visualization {% endblock %}
+{% block content %}
+    <div class="content">
+        <img src="{{ url_for('static', filename='/images/fireRiskPointsGraph.png')}}" id="fireRiskPointsGraph">
+        <table id="riskTable">
+            <tr>
+              {% if highestNumbersRegion == "sul" %}
+                <td class="tdHighRisk">Sul</td>
+              {% elif lowestNumbersRegion == "sul" %}
+                <td class="tdLowRisk">Sul</td>
+              {% else %} 
+                <td class="tdOtherRisk">Sul</td>
+              {% endif %}
+              {% if highestNumbersRegion == "nordeste" %}
+                <td class="tdHighRisk">Nordeste</td>
+              {% elif lowestNumbersRegion == "nordeste" %}
+                <td class="tdLowRisk">Nordeste</td>
+              {% else %} 
+                <td class="tdOtherRisk">Nordeste</td>
+              {% endif %}
+              {% if highestNumbersRegion == "norte" %}
+                <td class="tdHighRisk">Norte</td>
+              {% elif lowestNumbersRegion == "norte" %}
+                <td class="tdLowRisk">Norte</td>
+              {% else %} 
+                <td class="tdOtherRisk">Norte</td>
+              {% endif %}
+              {% if highestNumbersRegion == "sudeste" %}
+                <td class="tdHighRisk">Sudeste</td>
+              {% elif lowestNumbersRegion == "sudeste" %}
+                <td class="tdLowRisk">Sudeste</td>
+              {% else %} 
+                <td class="tdOtherRisk">Sudeste</td>
+              {% endif %}
+              {% if highestNumbersRegion == "centroOeste" %}
+                <td class="tdHighRisk">Centro Oeste</td>
+              {% elif lowestNumbersRegion == "centroOeste" %}
+                <td class="tdLowRisk">Centro Oeste</td>
+              {% else %} 
+                <td class="tdOtherRisk">Centro Oeste</td>
+              {% endif %}
+            </tr>
+          </table>
+    </div>
+{% endblock %}
