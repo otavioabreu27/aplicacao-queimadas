@@ -1,4 +1,8 @@
 # Installation guide
+
+## 0. Youtube Video
+https://youtu.be/PVxVdh-NHgo
+
 ## 1. Clone the repository
 First of all, clone this repository on your local environment. For doing so execute the command line bellow.
 
